@@ -1,4 +1,5 @@
 <?php
+namespace DHL_Courier;
 
 /**
  * @author		Piotr Filipek <pfilipek@media4u.pl>
