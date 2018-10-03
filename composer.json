@@ -1,0 +1,15 @@
+{
+  "name": "kamil-kobielski/dhl24-client",
+  "description": "Obsługa polskiego serwisu DHL24 #dhl #soap #webservices",
+  "type": "library",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Kamil Kobielski",
+      "email": "kamil.kobielski@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6"
+  }
+}

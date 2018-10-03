@@ -277,7 +277,7 @@ class DHL_Courier extends SoapClient {
 	 * @param string $additionalInfo Dodatkowe informacje dla kuriera
 	 * @return array
 	 */
-	public function bookCourierWithoutDefinedShipments(string $pickupDate, string $pickupTimeFrom, string $pickupTimeTo, array $shipper, int $numberOfExPieces, int $numberOfDrPieces, int $totalWeight, int $heaviestPieceWeight, string $additionalInfo = null){
+	public function bookCourierWithoutDefinedShipments(string $pickupDate, string $pickupTimeFrom, string $pickupTimeTo, string $shipmentIdList, array $shipper, int $numberOfExPieces, int $numberOfDrPieces, int $totalWeight, int $heaviestPieceWeight, string $additionalInfo = null){
 		$request = [
 			'pickupDate' => $pickupDate,
 			'pickupTimeFrom' => $pickupTimeFrom,
