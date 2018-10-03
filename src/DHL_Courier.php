@@ -1,6 +1,8 @@
 <?php
 namespace DHL_Courier;
 
+use SoapClient;
+
 /**
  * @author		Piotr Filipek <pfilipek@media4u.pl>
  * @version		0.1.3
