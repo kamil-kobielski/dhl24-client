@@ -14,7 +14,7 @@
   },
   "autoload":{
     "psr-4": {
-      "DHL_Courier\\": "src/DHL_Courier"
+      "DHL_Courier\\": "src/"
     }
   }
 }
