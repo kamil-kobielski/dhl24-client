@@ -27,7 +27,7 @@ class DHL_Courier extends SoapClient
      * @param string $pass Hasło
      * @param string $wsdl Adres WSDL (domyślnie testowy)
      */
-    public function __construct(string $user, string $pass, string $wsdl)
+    public function __construct($user, $pass, $wsdl)
     {
         $this->config = [
             'login' => $user,
@@ -65,7 +65,7 @@ class DHL_Courier extends SoapClient
      *
      * @return array
      */
-    public function getPostcodeServices(string $postCode, string $pickupDate = null)
+    public function getPostcodeServices($postCode, $pickupDate = null)
     {
         $postCode = preg_replace('/-/', '', $postCode);
 
@@ -228,7 +228,7 @@ class DHL_Courier extends SoapClient
      *
      * @return array
      */
-    public function toArray($object): array
+    public function toArray($object)
     {
         return json_decode(json_encode($object), true);
     }
@@ -242,7 +242,7 @@ class DHL_Courier extends SoapClient
      *
      * @return array
      */
-    public function getAllShipments($offset = 0): array
+    public function getAllShipments($offset = 0)
     {
         return $this->getMyShipments([
             'createdFrom' => date('Y-m-d', time() - 3600 * 24 * 90),
@@ -274,7 +274,7 @@ class DHL_Courier extends SoapClient
      *
      * @return array
      */
-    public function getTrackingNumberInfo(int $trackingNumber): array
+    public function getTrackingNumberInfo(int $trackingNumber)
     {
         return $this->getTrackAndTraceInfo([
             'shipmentId' => $trackingNumber
