@@ -195,12 +195,7 @@ class DHL_Courier extends SoapClient
         $shipmentInfo->labelType       = $labelType;
         $shipmentInfo->billing         = $billing;
         $shipmentInfo->shipmentTime    = $shipmentTime;
-        $shipmentInfo->specialServices = [
-            'item' => [
-                'serviceType' => 'ODB'
-            ],
-            emptyArray($specialServices) ?: $specialServices
-        ];
+        $shipmentInfo->specialServices = empty($specialServices) ?: $specialServices;
 
 
         $data               = new stdClass();
