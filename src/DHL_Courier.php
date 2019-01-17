@@ -207,8 +207,8 @@ class DHL_Courier extends SoapClient
         $data->pieceList = $pieceList;
 
         $data->ship           = new stdClass();
-        $data->ship->shipper  = ['address' => $shipper];
-        $data->ship->receiver = ['address' => $receiver];
+        $data->ship->shipper  = $shipper;
+        $data->ship->receiver = $receiver;
 
 
         return $this->createShipment([
