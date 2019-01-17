@@ -175,6 +175,8 @@ class DHL_Courier extends SoapClient
      */
     public function registerParcel(
         string $billingAccountNumber,
+        string $shippingPaymentType,
+        string $paymentType,
         array $deliveryInfo,
         array $receiver,
         array $shipper,
@@ -184,10 +186,9 @@ class DHL_Courier extends SoapClient
         string $labelType
     ) {
         $billing = new stdClass();
-//		$billing->billingAccountNumber = $this->PaymentData();
         $billing->billingAccountNumber = $billingAccountNumber;
-        $billing->shippingPaymentType  = 'SHIPPER';
-        $billing->paymentType          = 'BANK_TRANSFER';
+        $billing->shippingPaymentType  = $shippingPaymentType;
+        $billing->paymentType          = $paymentType;
 
         $shipmentInfo                  = new stdClass();
         $shipmentInfo->dropOffType     = 'REGULAR_PICKUP';
