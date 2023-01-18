@@ -231,7 +231,7 @@ class DHL_Courier extends SoapClient
 
 
     /**
-     * Pobiera listę przesyłek z ostatnich 90 dni,
+     * Pobiera listę przesyłek z ostatnich 89 dni,
      * bo na tyle można maksymalnie ustawić.
      *
      * @param int $offset Usługa zwraca maksymalnie 100 rekordów - w przypadku gdy w danym przedziale czasowym jest ich więcej, należy skorzystać z offsetu.
@@ -241,7 +241,7 @@ class DHL_Courier extends SoapClient
     public function getAllShipments($offset = 0)
     {
         return $this->getMyShipments([
-            'createdFrom' => date('Y-m-d', time() - 3600 * 24 * 90),
+            'createdFrom' => date('Y-m-d', time() - 3600 * 24 * 89),
             'createdTo' => date('Y-m-d', time()),
             'offset' => $offset
         ]);
@@ -257,7 +257,7 @@ class DHL_Courier extends SoapClient
     public function getShipmentsCount()
     {
         return $this->getMyShipmentsCount([
-            'createdFrom' => date('Y-m-d', time() - 3600 * 24 * 90),
+            'createdFrom' => date('Y-m-d', time() - 3600 * 24 * 89),
             'createdTo' => date('Y-m-d', time())
         ]);
     }
